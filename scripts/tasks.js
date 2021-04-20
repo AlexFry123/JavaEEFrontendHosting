@@ -1,8 +1,8 @@
 const token = localStorage.getItem('AuthToken')
-token ? getTasks() : window.location.replace('login.html')
+token ? getTasks() : window.location.replace('./login.html')
 
 userRole = parseJwt(token).role
-if(userRole === 'ROLE_ADMIN') window.location.replace('adminTasks.html')
+if(userRole === 'ROLE_ADMIN') window.location.replace('./adminTasks.html')
 
 function parseJwt (token) {
     var base64Url = token.split('.')[1];

@@ -19,7 +19,7 @@ $( "#signupForm" ).submit(function( event ) {
     dataType: "json",
     success: function(data){
       alert( "Successfully registred!" );
-      window.location.replace('/login.html')
+      window.location.replace('./login.html')
     },
     error: function(errMsg) {
         console.log(errMsg)
