@@ -105,3 +105,13 @@ body {
 .admin-cell {
   flex: 1;
 }
+
+.scroll-rules {
+  max-height: 80vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.scroll-rules::-webkit-scrollbar {
+  width: 1px;
+}

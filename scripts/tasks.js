@@ -15,11 +15,12 @@ function parseJwt (token) {
 };
 
 function getTasks(){
-
+    
     const tasksContainer = $('#accordionExample')
+    tasksContainer.empty()
     const parsedObject = parseJwt(token)
 $.ajax({
-    url: "https://do-to-list-jee.herokuapp.com/api/task",
+    url: `https://do-to-list-jee.herokuapp.com/api/task?userId=${parsedObject.id}`,
     // The key needs to match your method's input parameter (case-sensitive).
     headers: {
         'Authorization': `Bearer ${token}`
@@ -44,8 +45,30 @@ function onExit(){
     window.location.replace('login.html')
 }
 
-function markAsDone(){
-    console.log('Marked')
+function markAsDone(taskId){
+    console.log('mark', taskId)
+   $.ajax({
+    type:'PATCH',
+    url: `https://do-to-list-jee.herokuapp.com/api/task/${taskId}`,
+    // The key needs to match your method's input parameter (case-sensitive).
+    headers: {
+        'Authorization': `Bearer ${token}`
+    },
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    data: JSON.stringify({taskStatus: 'DONE'}),
+    statusCode: {
+        200: function (res) {
+            console.log('Success',res)
+            alert('Successfully changed status to DONE')
+            getTasks()
+        },
+        401: function (res) {
+             console.log('Error', res)
+        alert( "Error occurred during changing task status" );
+        }
+    }
+})
 }
 
 function createTask(data){
@@ -76,7 +99,7 @@ function createTask(data){
                     ${data.description}
                 </div>
                 <div class="mark-as-done-section ">
-                    ${data.status !== 'DONE' ? `<button class="btn btn-primary mt-2" onclick="markAsDone()">
+                    ${data.status !== 'DONE' ? `<button class="btn btn-primary mt-2" onclick="markAsDone(${data.id})">
                         Mark as done
                     </button>` : ''}
                 </div>

@@ -73,6 +73,10 @@ $.ajax({
     const creationDate = form.find('[name=creationDate]').val()
     const deadline = form.find('[name=deadline]').val()
     const status = form.find('[name=status]').val()
+        if(new Date(deadline).getTime() <= new Date(creationDate).getTime()){
+            alert('Deadline cannot be earlier than creation date')
+            return
+        }
 
     $.ajax({
         url: "https://do-to-list-jee.herokuapp.com/api/user",
@@ -86,7 +90,10 @@ $.ajax({
         200: function (res) {
             console.log('Success',res)
             const filteredRes = res.filter((item) => item.email === email)
-            console.log('filtered', filteredRes[0])
+            if(!filteredRes.length){ 
+                alert('There is no users with such email')
+                return;
+            }
             if(res){
                 addNewTask({title, description, creationDate: creationDate.toString(), deadline: deadline.toString(), status, userId: filteredRes[0].id })
             }
@@ -165,6 +172,10 @@ function editSubmit(id){
 function onExit(){
     localStorage.removeItem('AuthToken')
     window.location.replace('login.html')
+}
+
+function onUsersPage(){
+        window.location.replace('./users.html')
 }
 
 function deleteTask(id){
