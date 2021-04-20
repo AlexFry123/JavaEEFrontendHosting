@@ -69,6 +69,9 @@ function onExit(){
     window.location.replace('login.html')
 }
 
+function onTasksPage(){
+    window.location.replace('./adminTasks.html')
+}
 
 function onUserDelete(id) {
 $.ajax({
