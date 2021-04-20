@@ -1,0 +1,46 @@
+body {
+  line-height: 1.2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  background-color: #f2f2f2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 390px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 77px 55px 33px;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+}
+
+.login-title {
+  display: block;
+  font-size: 30px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-element {
+  margin-bottom: 16px;
+}
+
+.signUp-redirect {
+  text-align: center;
+}

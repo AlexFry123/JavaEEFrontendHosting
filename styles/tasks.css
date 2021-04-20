@@ -1,0 +1,107 @@
+body {
+  line-height: 1.2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  background-color: #f2f2f2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks-canvas {
+  width: inherit;
+  height: 90vh;
+  margin: 16px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  font-size: 16px;
+}
+
+.exit-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  justify-content: flex-end;
+}
+
+.title {
+  font-size: 30px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  flex: 4;
+}
+
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  background-color: rgb(21, 94, 21);
+  color: lightgray;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.status-pending {
+  background-color: rgb(126, 19, 19);
+  color: lightgray;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.time-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.task-description {
+  text-align: center;
+}
+
+.mark-as-done-section {
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.admin-cell {
+  flex: 1;
+}

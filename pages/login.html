@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/input.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>DoToList</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="login-card">
+            <div class="login-title">Welcome</div>
+
+            <form id="loginForm" class="form-container">
+                <label class="field field_v1 form-element">
+                    <input type='email' class="field__input" placeholder="Enter email" name='email' autofocus required>
+                    <span class="field__label-wrap">
+                        <span class="field__label">Email</span>
+                    </span>
+                </label>
+                <label class="field field_v1 form-element">
+                    <input type='password' class="field__input" placeholder="Enter password" name='password' required>
+                    <span class="field__label-wrap">
+                        <span class="field__label">Password</span>
+                    </span>
+                </label>
+                <button class="btn btn-primary mt-2">Login</button>
+            </form>
+
+            <div class="signUp-redirect mt-4">Don't have an account?</div>
+            <div class="signUp-redirect"><a href="signUp.html">Sign up</a></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../scripts/login.js"></script>
+</body>
+
+</html>

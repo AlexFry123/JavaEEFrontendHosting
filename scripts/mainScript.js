@@ -1,0 +1,1 @@
+sessionStorage.getItem('JWToken') ? window.location.replace("./pages/tasks.html") : window.location.replace("./pages/login.html")
